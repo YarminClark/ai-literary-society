@@ -1,6 +1,7 @@
 # poem_repository.py
 
 from database.db import get_connection
+from models.poem import Poem
 
 # Create a new poem and return its ID
 def create_poem(
@@ -102,6 +103,18 @@ poet_id: int
 
     return poems
 
+# Convert a database row to a Poem object
+def row_to_poem(row):
+    return Poem(
+        poet_id = row["poet_id"],
+        prompt = row["prompt"],
+        idea = row["idea"],
+        draft = row["draft"],
+        review = row["review"],
+        revision = row["revision"]
+    )
+
+
 # Retrieve all poems, ordered by creation date (newest first)
 def get_all_poems():
     conn = get_connection()
@@ -116,11 +129,13 @@ def get_all_poems():
         """
     )
 
-    poems = cursor.fetchall()
+    #poems = cursor.fetchall()
+    row = cursor.fetchall()
 
     conn.close()
 
-    return poems
+    #return poems
+    return [row_to_poem(row) for row in rows]
 
 # Delete a poem by its ID
 def delete_poem(

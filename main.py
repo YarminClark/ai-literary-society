@@ -23,14 +23,15 @@ def run_weekly_issue():
     # Get all poets
     #poets = [{"id": 1, "name": "Day Mountain"}]  # Mocked poet list for testing
     poets = get_all_poets()
-    print(f"Poets: {[poet['name'] for poet in poets]}")
+    #print(f"Poets: {[poet['name'] for poet in poets]}")
+    print(f"Poets: {[poet.name for poet in poets]}")
 
     # Generate the poems for each poet at a time
     for poet in poets:
 
         # Get the information we need about the poet
-        poet_context = get_poet_context(poet["id"])
-        # poet_context = get_poet_context(poet.id)
+        #poet_context = get_poet_context(poet["id"])
+        poet_context = get_poet_context(poet.id)
         print(f"Poet Context for {poet_context['name']}: {poet_context}")
         
         # Generate ideas for the prompt
