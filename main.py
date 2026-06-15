@@ -13,6 +13,12 @@ from components.memory_update import update_memory
 
 from database.poet_repository import get_all_poets
 
+import constants.constants as constants
+
+# Example of how to use constants in a function
+def fetch_data():
+    print(f"Min poems {constants.MIN_POEMS}...")
+
 
 def run_weekly_issue():
 
