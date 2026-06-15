@@ -5,12 +5,14 @@ from components.idea_selection import idea_selection
 
 from components.poem_drafting import poem_drafting
 from components.poem_review import poem_review
-from components.poem_revision import poem_revision
-#from components.save_poem_pipeline import save_poem_pipeline    
+from components.poem_revision import poem_revision  
 from components.editorial_ranking import poem_review
 
 from components.publication import publish
 from components.memory_update import update_memory
+
+from database.poet_repository import get_all_poets
+
 
 def run_weekly_issue():
 
@@ -19,9 +21,9 @@ def run_weekly_issue():
     print(f"Weekly Prompt: {prompt}")
 
     # Get all poets
-    poets = [{"id": 1, "name": "Day Mountain"}]  # Mocked poet list for testing
-    #poets = get_all_poets()
-    #print(f"Poets: {[poet.name for poet in poets]}")
+    #poets = [{"id": 1, "name": "Day Mountain"}]  # Mocked poet list for testing
+    poets = get_all_poets()
+    print(f"Poets: {[poet['name'] for poet in poets]}")
 
     # Generate the poems for each poet at a time
     for poet in poets:
@@ -66,8 +68,9 @@ def run_weekly_issue():
                 poet_context
             )
             print(f"Revision for {poet_context['name']}: {revision}")
-            """
 
+
+    """
             save_poem_pipeline(
                 poet_id=poet.id,
                 prompt=prompt,
