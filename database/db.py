@@ -14,49 +14,56 @@ def get_connection():
     return conn
 
 # Initialize the database and create tables if they don't exist
-def initialise_database():
+def initialise_database(drop_poems=False):
 
     conn = get_connection()
 
     cursor = conn.cursor()
 
+
     cursor.execute(
         """
-        CREATE TABLE IF NOT EXISTS poets
+        CREATE TABLE IF NOT EXISTS issues
         (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-            name TEXT NOT NULL,
-
-            age INTEGER,
-
-            biography TEXT
+            prompt TEXT NOT NULL,
+            date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
         """
     )
 
     cursor.execute(
         """
+        CREATE TABLE IF NOT EXISTS poets
+        (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            age INTEGER,
+            biography TEXT
+        )
+        """
+    )
+
+    if drop_poems:
+        cursor.execute("""DROP TABLE IF EXISTS poems""")
+        conn.commit()
+        print("Dropped poems table")
+
+    cursor.execute(
+        """
         CREATE TABLE IF NOT EXISTS poems
         (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-
             poet_id INTEGER NOT NULL,
-
-            prompt TEXT,
-
+            issue_id INTEGER NOT NULL,
             idea TEXT,
-
             draft TEXT,
-
             review TEXT,
-
             revision TEXT,
-
+            score INTEGER,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
             FOREIGN KEY(poet_id)
-                REFERENCES poets(id)
+            REFERENCES poets(id)
         )
         """
     )

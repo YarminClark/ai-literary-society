@@ -6,11 +6,12 @@ from models.poem import Poem
 # Create a new poem and return its ID
 def create_poem(
 poet_id: int,
-prompt: str,
+issue_id: int,
 idea: str,
 draft: str,
 review: str,
-revision: str
+revision: str,
+score: int
 ) -> int:
     conn = get_connection()
 
@@ -21,14 +22,16 @@ revision: str
         INSERT INTO poems
         (
             poet_id,
-            prompt,
+            issue_id,
             idea,
             draft,
             review,
-            revision
+            revision,
+            score
         )
         VALUES
         (
+            ?,
             ?,
             ?,
             ?,
@@ -39,11 +42,12 @@ revision: str
         """,
         (
             poet_id,
-            prompt,
+            issue_id,
             idea,
             draft,
             review,
-            revision
+            revision,
+            score
         )
     )
 
@@ -103,15 +107,37 @@ poet_id: int
 
     return [row_to_poem(row) for row in poems]
 
+def get_poems_by_issue(issue_id):
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM poems
+        WHERE issue_id = ?
+        ORDER BY score DESC
+        """,
+        (issue_id,)
+    )
+
+    poems = cursor.fetchall()
+
+    conn.close()
+
+    return [row_to_poem(row) for row in poems]
+
 # Convert a database row to a Poem object
 def row_to_poem(row):
     return Poem(
         poet_id = row["poet_id"],
-        prompt = row["prompt"],
+        issue_id = row["issue_id"],
         idea = row["idea"],
         draft = row["draft"],
         review = row["review"],
-        revision = row["revision"]
+        revision = row["revision"],
+        score = row["score"]
     )
 
 
@@ -151,6 +177,21 @@ poem_id: int
         WHERE id = ?
         """,
         (poem_id,)
+    )
+
+    conn.commit()
+    conn.close()
+
+# Delete a poem by its ID
+def delete_all_poems():
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        DELETE FROM poems
+        """
     )
 
     conn.commit()

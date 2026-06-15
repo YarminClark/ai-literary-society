@@ -13,12 +13,15 @@ from components.memory_update import update_memory
 
 from database.poem_repository import create_poem, count_poems
 from database.poet_repository import get_all_poets
+from database.issue_repository import create_issue, get_latest_issue
 
 def run_weekly_issue():
-
-    # Get the weekly prompt
+    # Create a new issue
     prompt = weekly_prompt()
-    print(f"Weekly Prompt: {prompt}")
+
+    create_issue(prompt)
+    issue_id = get_latest_issue().id
+    print(f"Generated Issue: {issue_id}. Weekly Prompt: {prompt}")
 
     # Get all poets
     #poets = [{"id": 1, "name": "Day Mountain"}]  # Mocked poet list for testing
@@ -74,18 +77,19 @@ def run_weekly_issue():
 
             create_poem(
                 poet_id=poet.id,
-                prompt=prompt,
+                issue_id=issue_id,
                 idea=idea,
                 draft=draft,
                 review=review_comments,
-                revision=revised_poem
+                revision=revised_poem,
+                score=poem_score
             )
             print(f"Number of poems in DB: {count_poems()}")
 
+    # After all poems are generated, we can rank them and publish the issue
+    publish(issue_id)
+
     """
-
-    publish(rankings)
-
     memory_update()
     """
 

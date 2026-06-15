@@ -8,7 +8,7 @@ class Poem:
 
     poet_id: int
 
-    prompt: str
+    issue_id: int
 
     idea: str
 
@@ -17,3 +17,5 @@ class Poem:
     review: str
 
     revision: str
+
+    score: int
