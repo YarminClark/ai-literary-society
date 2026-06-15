@@ -155,3 +155,22 @@ poem_id: int
 
     conn.commit()
     conn.close()
+
+# Function to count the total number of poems in the database
+def count_poems():
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        FROM poems
+        """
+    )
+
+    count = cursor.fetchone()[0]
+
+    conn.close()
+
+    return count

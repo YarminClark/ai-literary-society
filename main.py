@@ -6,11 +6,12 @@ from components.idea_selection import idea_selection
 from components.poem_drafting import poem_drafting
 from components.poem_review import poem_review
 from components.poem_revision import poem_revision  
-from components.editorial_ranking import poem_review
+from components.editorial_ranking import score_poem
 
 from components.publication import publish
 from components.memory_update import update_memory
 
+from database.poem_repository import create_poem, count_poems
 from database.poet_repository import get_all_poets
 
 def run_weekly_issue():
@@ -56,31 +57,32 @@ def run_weekly_issue():
             )
             print(f"Draft for {poet_context['name']}: {draft}")
                 
-            review = poem_review(
+            review_comments = poem_review(
                 draft,
                 poet_context
             )
-            print(f"Review for {poet_context['name']}: {review}")
+            print(f"Review for {poet_context['name']}: {review_comments}")
  
-            revision = poem_revision(
+            revised_poem = poem_revision(
                 draft,
-                review,
+                review_comments,
                 poet_context
             )
-            print(f"Revision for {poet_context['name']}: {revision}")
+            print(f"Revision for {poet_context['name']}: {revised_poem}")
+        
+            poem_score = score_poem(revised_poem)
 
-
-    """
-            save_poem_pipeline(
+            create_poem(
                 poet_id=poet.id,
                 prompt=prompt,
                 idea=idea,
                 draft=draft,
-                review=review,
-                revision=revision
+                review=review_comments,
+                revision=revised_poem
             )
+            print(f"Number of poems in DB: {count_poems()}")
 
-    rankings = editorial_ranking()
+    """
 
     publish(rankings)
 
