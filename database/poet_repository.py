@@ -63,7 +63,7 @@ poet_id: int
 
     conn.close()
 
-    return poet
+    return row_to_poet(poet)
 
 # Map a database row to a Poet object
 def row_to_poet(row):

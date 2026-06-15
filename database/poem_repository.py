@@ -76,7 +76,7 @@ poem_id: int
 
     conn.close()
 
-    return poem
+    return row_to_poem(poem)
 
 
 # Retrieve all poems for a given poet, ordered by creation date (newest first)
@@ -101,7 +101,7 @@ poet_id: int
 
     conn.close()
 
-    return poems
+    return [row_to_poem(row) for row in poems]
 
 # Convert a database row to a Poem object
 def row_to_poem(row):
