@@ -1,3 +1,4 @@
+
 def publish(rankings):
 
     print("Publishing issue")
