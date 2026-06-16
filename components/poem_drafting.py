@@ -7,12 +7,12 @@
 
 def poem_drafting(
     prompt: str,
-    poet_context: dict,
+    poet_context: str,
     idea: str
 ) -> str:
 
     return (
         f"Draft poem based on "
         f"{idea} for "
-        f"{poet_context['name']}"
+        f"{poet_context}"
     )

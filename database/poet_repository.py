@@ -1,6 +1,23 @@
 from database.db import get_connection
 from models.poet import Poet
 
+
+# Map a database row to a Poet object
+def row_to_poet(row):
+    return Poet(
+        id=row["id"],
+        name=row["name"],
+        age=row["age"],
+        nationality=row["nationality"],
+        first_language=row["first_language"],
+        education_level=row["education_level"],
+        occupation=row["occupation"],
+        location=row["location"],
+        biography=row["biography"],
+        physical_notes=row["physical_notes"],
+        current_life_notes=row["current_life_notes"]
+    )
+
 # Create a new poet and return the poet's ID
 def create_poet(
 name: str,
@@ -64,15 +81,6 @@ poet_id: int
     conn.close()
 
     return row_to_poet(poet)
-
-# Map a database row to a Poet object
-def row_to_poet(row):
-    return Poet(
-        id=row["id"],
-        name=row["name"],
-        age=row["age"],
-        biography=row["biography"]
-    )
 
 # Get all poets, ordered by name
 def get_all_poets():

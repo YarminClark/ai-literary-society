@@ -1,0 +1,3 @@
+from tests.test_poet_context import test_get_poet_context
+
+test_get_poet_context()

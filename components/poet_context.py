@@ -1,7 +1,7 @@
-def get_poet_context(poet):
+from database.poet_repository import get_poet
 
-    return {
-        "name": "Day Mountain",
-        "age": "45",
-        "biography": "Climbed a mountain and found poetry there.",
-    }
+def get_poet_context(poet_id):
+
+    poet = get_poet(poet_id)
+
+    return f"{poet.name} ({poet.age}): {poet.biography}"

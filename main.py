@@ -35,43 +35,43 @@ def run_weekly_issue():
         # Get the information we need about the poet
         #poet_context = get_poet_context(poet["id"])
         poet_context = get_poet_context(poet.id)
-        print(f"Poet Context for {poet_context['name']}: {poet_context}")
+        print(f"Poet Context {poet_context}")
         
         # Generate ideas for the prompt
         ideas = idea_generation(
             prompt,
             poet_context
         )
-        print(f"Ideas for {poet_context['name']}: {ideas}")
+        print(f"Ideas for {poet.name}: {ideas}")
 
         selected_ideas = idea_selection(
             ideas,
             poet_context
         )
-        print(f"Selected Ideas for {poet_context['name']}: {selected_ideas}")
+        print(f"Selected Ideas for {poet.name}: {selected_ideas}")
    
         for idea in selected_ideas:
 
-            print(f"\nGenerating draft for {poet_context['name']} based on idea: {idea}")
+            print(f"\nGenerating draft for {poet.name} based on idea: {idea}")
             draft = poem_drafting(
                 prompt,
                 poet_context,
                 idea
             )
-            print(f"Draft for {poet_context['name']}: {draft}")
+            print(f"Draft for {poet.name}: {draft}")
                 
             review_comments = poem_review(
                 draft,
                 poet_context
             )
-            print(f"Review for {poet_context['name']}: {review_comments}")
+            print(f"Review for {poet.name}: {review_comments}")
  
             revised_poem = poem_revision(
                 draft,
                 review_comments,
                 poet_context
             )
-            print(f"Revision for {poet_context['name']}: {revised_poem}")
+            print(f"Revision for {poet.name}: {revised_poem}")
         
             poem_score = score_poem(revised_poem)
 
