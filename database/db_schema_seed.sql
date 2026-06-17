@@ -245,6 +245,56 @@ CREATE TABLE poet_influences (
                     CHECK (depth IN ('passing', 'significant', 'formative'))
 );
 
+-- Seed data: literary influences for each poet
+INSERT INTO poet_influences
+(poet_id, influence_name, influence_type, depth)
+VALUES
+
+-- Margaret Ellison (id = 1)
+
+(1, 'Philip Larkin', 'poet', 'significant'),
+(1, 'Seamus Heaney', 'poet', 'formative'),
+(1, 'Local history archives', 'other', 'significant'),
+(1, 'British landscape tradition', 'movement', 'significant'),
+
+-- Yusuf Rahman (id = 2)
+
+(2, 'R. S. Thomas', 'poet', 'significant'),
+(2, 'The Quran', 'text', 'formative'),
+(2, 'Astronomy', 'art_form', 'passing'),
+(2, 'Miroslav Holub', 'poet', 'significant'),
+
+-- Elena Kovacs (id = 3)
+
+(3, 'Paul Celan', 'poet', 'formative'),
+(3, 'Wisława Szymborska', 'poet', 'significant'),
+(3, 'Translation studies', 'other', 'significant'),
+(3, 'Central European literary modernism', 'movement', 'significant'),
+(3, 'Italo Calvino', 'other', 'passing'),
+
+-- Thomas Arkwright (id = 4)
+
+(4, 'Robert Frost', 'poet', 'significant'),
+(4, 'Traditional English ballads', 'text', 'formative'),
+(4, 'George Herbert', 'poet', 'significant'),
+(4, 'Traditional craftsmanship', 'other', 'formative'),
+(4, 'New Formalism', 'movement', 'significant'),
+
+-- Lydia Chen (id = 5)
+
+(5, 'Oulipo', 'movement', 'formative'),
+(5, 'Georges Perec', 'other', 'significant'),
+(5, 'Marianne Moore', 'poet', 'significant'),
+(5, 'Statistics', 'other', 'formative'),
+(5, 'Experimental literature', 'movement', 'significant'),
+
+-- Aisha Mahmood (id = 6)
+
+(6, 'Anne Carson', 'poet', 'formative'),
+(6, 'Ocean Vuong', 'poet', 'significant'),
+(6, 'Contemporary digital culture', 'other', 'significant'),
+(6, 'Postmodernism', 'movement', 'passing'),
+(6, 'Philosophy', 'other', 'formative');
 
 -- ─────────────────────────────────────────────────
 -- Named people in the poet's life
