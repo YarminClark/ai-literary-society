@@ -226,6 +226,149 @@ CREATE TABLE poet_traits (
     UNIQUE (poet_id, trait_key)
 );
 
+-- Seed table
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(1,'poem_length',0.85,'seeded'),
+(1,'line_length',0.75,'seeded'),
+(1,'density',0.45,'seeded'),
+(1,'revision_intensity',0.65,'seeded'),
+(1,'enjambment',0.70,'seeded'),
+(1,'form_preference',0.20,'seeded'),
+(1,'rhyme_tendency',0.10,'seeded'),
+(1,'structural_clarity',0.80,'seeded'),
+(1,'theme_place',0.95,'seeded'),
+(1,'theme_mortality',0.75,'seeded'),
+(1,'theme_family',0.45,'seeded'),
+(1,'theme_nature',0.60,'seeded'),
+(1,'theme_work',0.40,'seeded'),
+(1,'narrative_tendency',0.90,'seeded'),
+(1,'confessional_degree',0.35,'seeded'),
+(1,'emotional_register',0.55,'seeded'),
+(1,'time_orientation',0.90,'seeded'),
+(1,'outlook',0.55,'seeded'),
+(1,'risk_taking',0.25,'seeded'),
+(1,'diction_register',0.55,'seeded'),
+(1,'intellectual_weight',0.45,'seeded'),
+(1,'persona_use',0.10,'inferred');
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(2,'poem_length',0.40,'seeded'),
+(2,'line_length',0.45,'seeded'),
+(2,'density',0.55,'seeded'),
+(2,'revision_intensity',0.60,'seeded'),
+(2,'enjambment',0.50,'seeded'),
+(2,'form_preference',0.20,'seeded'),
+(2,'rhyme_tendency',0.15,'seeded'),
+(2,'structural_clarity',0.90,'seeded'),
+(2,'theme_family',0.90,'seeded'),
+(2,'theme_faith',0.70,'seeded'),
+(2,'theme_nature',0.40,'seeded'),
+(2,'theme_work',0.60,'seeded'),
+(2,'confessional_degree',0.35,'seeded'),
+(2,'emotional_register',0.40,'seeded'),
+(2,'time_orientation',0.75,'seeded'),
+(2,'outlook',0.70,'seeded'),
+(2,'risk_taking',0.25,'seeded'),
+(2,'diction_register',0.45,'seeded'),
+(2,'intellectual_weight',0.70,'seeded'),
+(2,'narrative_tendency',0.55,'seeded'),
+(2,'address',0.30,'inferred');
+
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(3,'poem_length',0.70,'seeded'),
+(3,'line_length',0.55,'seeded'),
+(3,'density',0.80,'seeded'),
+(3,'revision_intensity',0.90,'seeded'),
+(3,'enjambment',0.75,'seeded'),
+(3,'form_preference',0.65,'seeded'),
+(3,'rhyme_tendency',0.30,'seeded'),
+(3,'structural_clarity',0.85,'seeded'),
+(3,'uses_sequences',0.95,'seeded'),
+(3,'theme_language',0.95,'seeded'),
+(3,'theme_place',0.60,'seeded'),
+(3,'theme_mortality',0.40,'seeded'),
+(3,'confessional_degree',0.50,'seeded'),
+(3,'emotional_register',0.75,'seeded'),
+(3,'time_orientation',0.70,'seeded'),
+(3,'outlook',0.45,'seeded'),
+(3,'risk_taking',0.50,'seeded'),
+(3,'diction_register',0.80,'seeded'),
+(3,'intellectual_weight',0.90,'seeded'),
+(3,'narrative_tendency',0.40,'seeded'),
+(3,'persona_use',0.35,'inferred');
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(4,'poem_length',0.55,'seeded'),
+(4,'line_length',0.55,'seeded'),
+(4,'density',0.60,'seeded'),
+(4,'revision_intensity',0.80,'seeded'),
+(4,'enjambment',0.35,'seeded'),
+(4,'form_preference',0.95,'seeded'),
+(4,'rhyme_tendency',0.90,'seeded'),
+(4,'structural_clarity',0.95,'seeded'),
+(4,'theme_work',0.95,'seeded'),
+(4,'theme_place',0.55,'seeded'),
+(4,'theme_family',0.30,'seeded'),
+(4,'theme_politics',0.20,'seeded'),
+(4,'confessional_degree',0.20,'seeded'),
+(4,'emotional_register',0.45,'seeded'),
+(4,'irony_quotient',0.65,'seeded'),
+(4,'time_orientation',0.65,'seeded'),
+(4,'outlook',0.60,'seeded'),
+(4,'risk_taking',0.30,'seeded'),
+(4,'diction_register',0.60,'seeded'),
+(4,'intellectual_weight',0.55,'seeded'),
+(4,'narrative_tendency',0.65,'inferred');
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(5,'poem_length',0.50,'seeded'),
+(5,'line_length',0.40,'seeded'),
+(5,'density',0.75,'seeded'),
+(5,'revision_intensity',0.70,'seeded'),
+(5,'enjambment',0.65,'seeded'),
+(5,'white_space',0.60,'seeded'),
+(5,'form_preference',0.55,'seeded'),
+(5,'rhyme_tendency',0.20,'seeded'),
+(5,'structural_clarity',0.70,'seeded'),
+(5,'theme_body',0.60,'seeded'),
+(5,'theme_language',0.50,'seeded'),
+(5,'theme_work',0.40,'seeded'),
+(5,'confessional_degree',0.40,'seeded'),
+(5,'emotional_register',0.45,'seeded'),
+(5,'irony_quotient',0.70,'seeded'),
+(5,'time_orientation',0.45,'seeded'),
+(5,'outlook',0.60,'seeded'),
+(5,'risk_taking',0.90,'seeded'),
+(5,'diction_register',0.65,'seeded'),
+(5,'intellectual_weight',0.95,'seeded'),
+(5,'narrative_tendency',0.25,'seeded');
+
+INSERT INTO poet_traits (poet_id, trait_key, tendency_score, confidence) VALUES
+(6,'poem_length',0.45,'seeded'),
+(6,'line_length',0.50,'seeded'),
+(6,'density',0.70,'seeded'),
+(6,'revision_intensity',0.40,'seeded'),
+(6,'enjambment',0.70,'seeded'),
+(6,'white_space',0.50,'seeded'),
+(6,'form_preference',0.40,'seeded'),
+(6,'rhyme_tendency',0.20,'seeded'),
+(6,'structural_clarity',0.40,'seeded'),
+(6,'theme_language',0.75,'seeded'),
+(6,'theme_politics',0.75,'seeded'),
+(6,'theme_place',0.45,'seeded'),
+(6,'confessional_degree',0.65,'seeded'),
+(6,'emotional_register',0.70,'seeded'),
+(6,'irony_quotient',0.45,'seeded'),
+(6,'time_orientation',0.35,'seeded'),
+(6,'outlook',0.50,'seeded'),
+(6,'risk_taking',0.95,'seeded'),
+(6,'diction_register',0.60,'seeded'),
+(6,'intellectual_weight',0.85,'seeded'),
+(6,'narrative_tendency',0.35,'seeded'),
+(6,'persona_use',0.55,'inferred');
+
 
 -- ─────────────────────────────────────────────────
 -- Literary and cultural influences
@@ -314,6 +457,306 @@ CREATE TABLE IF NOT EXISTS poet_relationships (
     introduced_week   INTEGER         -- which week this person first appeared in a poem
 );
 
+-- Seed data
+INSERT INTO poet_relationships
+(poet_id, person_name, relationship_type, status, notes, introduced_week)
+VALUES
+
+-- ==========================================
+-- Margaret Ellison
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Margaret Ellison'),
+'Peter Ellison',
+'deceased_loved_one',
+'deceased',
+'Husband of thirty-three years. Former civil engineer. Died from cancer ten years ago. Appears frequently in Margaret''s memories of shared walks and local places.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Margaret Ellison'),
+'Sarah Ellison',
+'child',
+'current',
+'Daughter, 41. Architect living in Bristol. Close relationship but they see each other less often than either would like.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Margaret Ellison'),
+'Daniel Ellison',
+'child',
+'current',
+'Son, 38. Works in environmental policy in Leeds. Shares his mother''s interest in public spaces and urban change.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Margaret Ellison'),
+'Joan Cartwright',
+'friend',
+'current',
+'Retired librarian and long-time walking companion. Frequently joins local history events.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Margaret Ellison'),
+'Michael Hargreaves',
+'friend',
+'current',
+'Chair of an Oxford local-history society. Occasionally sends Margaret obscure archival discoveries.',
+NULL
+),
+
+-- ==========================================
+-- Yusuf Rahman
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Yusuf Rahman'),
+'Samira Rahman',
+'partner',
+'current',
+'Married in 2018. Community pharmacist. Intelligent, practical and frequently the first reader of Yusuf''s poems.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Yusuf Rahman'),
+'Leila Rahman',
+'child',
+'current',
+'Daughter, age three. Source of both exhaustion and wonder.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Yusuf Rahman'),
+'Abdul Rahman',
+'parent',
+'current',
+'Father. Retired mechanical engineer. Encouraged Yusuf''s interest in science and fixing things.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Yusuf Rahman'),
+'Nadia Rahman',
+'parent',
+'current',
+'Mother. Former primary-school teacher. Values education and community service.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Yusuf Rahman'),
+'James Porter',
+'colleague',
+'current',
+'History teacher at Yusuf''s school. Frequent lunch companion and sounding board.',
+NULL
+),
+
+-- ==========================================
+-- Elena Kovacs
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Elena Kovacs'),
+'Oliver Grant',
+'partner',
+'current',
+'Academic editor. Met Elena at a translation conference in Prague. Calm, patient and intellectually curious.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Elena Kovacs'),
+'Katalin Kovacs',
+'parent',
+'current',
+'Mother. Retired music teacher in Hungary. Strong influence on Elena''s sensitivity to rhythm and sound.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Elena Kovacs'),
+'Andras Kovacs',
+'parent',
+'deceased',
+'Father. Former railway engineer. Died unexpectedly when Elena was in her twenties.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Elena Kovacs'),
+'Zsofia Nagy',
+'friend',
+'current',
+'Translator living in Budapest. Maintains a decades-long correspondence with Elena.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Elena Kovacs'),
+'Aisha Mahmood',
+'mentor',
+'current',
+'Young poet Elena informally mentors through the workshop. Appreciates her ambition and curiosity.',
+NULL
+),
+
+-- ==========================================
+-- Thomas Arkwright
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Thomas Arkwright'),
+'Rachel Arkwright',
+'partner',
+'current',
+'Primary-school headteacher. Married for thirty years. Appreciates Thomas''s stubbornness more than he deserves.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Thomas Arkwright'),
+'Ben Arkwright',
+'child',
+'current',
+'Software engineer living in Cambridge. Loves his father but finds him occasionally impossible.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Thomas Arkwright'),
+'George Arkwright',
+'parent',
+'deceased',
+'Former carpenter. Taught Thomas practical skills and respect for craftsmanship.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Thomas Arkwright'),
+'Arthur Wells',
+'friend',
+'current',
+'Retired blacksmith and regular customer. Shares Thomas''s enthusiasm for traditional crafts.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Thomas Arkwright'),
+'Lydia Chen',
+'rival',
+'current',
+'Good-natured poetic rival. They regularly disagree about free verse, constraints and experimentation.',
+NULL
+),
+
+-- ==========================================
+-- Lydia Chen
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Lydia Chen'),
+'Mark Sullivan',
+'ex_partner',
+'past',
+'Relationship ended amicably after six years. Still occasionally exchanges messages with Lydia.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Lydia Chen'),
+'Mei Chen',
+'parent',
+'current',
+'Mother. Accountant living in Manchester. Encouraged Lydia''s love of puzzles and numbers.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Lydia Chen'),
+'David Chen',
+'parent',
+'current',
+'Father. Civil engineer. Shares Lydia''s fascination with systems and design.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Lydia Chen'),
+'Priya Nair',
+'friend',
+'current',
+'Data scientist and enthusiastic board-game player. One of Lydia''s closest friends.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Lydia Chen'),
+'Thomas Arkwright',
+'rival',
+'current',
+'Frequent debating partner on poetic form. Their disagreements are affectionate and productive.',
+NULL
+),
+
+-- ==========================================
+-- Aisha Mahmood
+-- ==========================================
+
+(
+(SELECT id FROM poets WHERE name='Aisha Mahmood'),
+'Farah Mahmood',
+'parent',
+'current',
+'Mother. Secondary-school English teacher who fostered Aisha''s love of reading.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Aisha Mahmood'),
+'Imran Mahmood',
+'parent',
+'current',
+'Solicitor. Encouraged debate, argument and intellectual independence.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Aisha Mahmood'),
+'Sana Mahmood',
+'sibling',
+'current',
+'Older sister, 24. Doctor in Birmingham. Practical and protective.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Aisha Mahmood'),
+'Elena Kovacs',
+'mentor',
+'current',
+'A writer Aisha greatly admires. Provides occasional feedback and encouragement.',
+NULL
+),
+
+(
+(SELECT id FROM poets WHERE name='Aisha Mahmood'),
+'Jacob Reed',
+'friend',
+'current',
+'Philosophy undergraduate. Frequent discussion partner on ethics, politics and technology.',
+NULL
+);
+
+
 -- ─────────────────────────────────────────────────
 -- Life events and notable developments
 -- ─────────────────────────────────────────────────
@@ -337,6 +780,280 @@ CREATE TABLE IF NOT EXISTS poet_events (
     poem_id      INTEGER REFERENCES poems(id),  -- if this event was inferred from a specific poem
     occurred_at  TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Seed data
+INSERT INTO poet_events (
+    poet_id,
+    issue_id,
+    event_type,
+    description,
+    source
+) VALUES
+
+-- =====================================================
+-- Margaret Ellison (poet_id = 1)
+-- =====================================================
+
+(
+    1,
+    1,
+    'life_event',
+    'While clearing boxes during her move to a smaller flat, discovered notebooks kept by her late husband during the 1980s, prompting renewed reflection on memory and shared history.',
+    'seeded'
+),
+
+(
+    1,
+    1,
+    'life_event',
+    'Began volunteering one afternoon each week with a local history archive, helping catalogue photographs of Oxford neighbourhoods.',
+    'seeded'
+),
+
+(
+    1,
+    1,
+    'life_event',
+    'A recurring knee problem has made her aware that some of her favourite walking routes may become difficult in the coming years.',
+    'seeded'
+),
+
+(
+    1,
+    1,
+    'new_obsession',
+    'Became increasingly interested in vanished footpaths, demolished buildings and other traces of forgotten urban landscapes around Oxford.',
+    'seeded'
+),
+
+(
+    1,
+    1,
+    'new_obsession',
+    'Started comparing old maps with present-day streets, developing a fascination with how cities remember and forget their own histories.',
+    'seeded'
+),
+
+-- =====================================================
+-- Yusuf Rahman (poet_id = 2)
+-- =====================================================
+
+(
+    2,
+    1,
+    'life_event',
+    'His daughter began speaking in complete sentences, making him newly aware of language acquisition, attention and the passage of time.',
+    'seeded'
+),
+
+(
+    2,
+    1,
+    'life_event',
+    'Accepted responsibility for coordinating the school science enrichment programme, increasing both workload and professional satisfaction.',
+    'seeded'
+),
+
+(
+    2,
+    1,
+    'life_event',
+    'Spent several late evenings repairing household items instead of replacing them, reinforcing his appreciation for maintenance and stewardship.',
+    'seeded'
+),
+
+(
+    2,
+    1,
+    'new_obsession',
+    'Developed a growing fascination with astronomical timescales after leading a school astronomy club project on stellar evolution.',
+    'seeded'
+),
+
+(
+    2,
+    1,
+    'new_obsession',
+    'Became interested in the parallels between scientific measurement and the imperfect ways people assess meaning, value and responsibility.',
+    'seeded'
+),
+
+-- =====================================================
+-- Elena Kovacs (poet_id = 3)
+-- =====================================================
+
+(
+    3,
+    1,
+    'life_event',
+    'Accepted a demanding translation commission involving multiple narrators whose voices are intentionally difficult to distinguish.',
+    'seeded'
+),
+
+(
+    3,
+    1,
+    'life_event',
+    'Returned briefly to Hungary for a family gathering and was surprised by how unfamiliar parts of her childhood city now felt.',
+    'seeded'
+),
+
+(
+    3,
+    1,
+    'life_event',
+    'Renewed correspondence with an elderly Hungarian poet whose letters increasingly focus on memory, ageing and literary legacy.',
+    'seeded'
+),
+
+(
+    3,
+    1,
+    'new_obsession',
+    'Began collecting examples of words and phrases that resist direct translation between languages, filling several notebooks with observations.',
+    'seeded'
+),
+
+(
+    3,
+    1,
+    'new_obsession',
+    'Started keeping records of recurring images that appear independently across unrelated translation projects.',
+    'seeded'
+),
+
+-- =====================================================
+-- Thomas Arkwright (poet_id = 4)
+-- =====================================================
+
+(
+    4,
+    1,
+    'life_event',
+    'Received an informal enquiry from a potential buyer interested in acquiring his bicycle repair business, forcing him to seriously consider retirement.',
+    'seeded'
+),
+
+(
+    4,
+    1,
+    'life_event',
+    'A younger mechanic he had informally mentored left to open a workshop of his own, leaving Thomas unexpectedly proud and reflective.',
+    'seeded'
+),
+
+(
+    4,
+    1,
+    'life_event',
+    'Noticed increasing stiffness in his hands after long days in the workshop and began wondering how much longer he wishes to work full time.',
+    'seeded'
+),
+
+(
+    4,
+    1,
+    'new_obsession',
+    'Started researching traditional apprenticeship records and local tradespeople from nineteenth-century Oxford.',
+    'seeded'
+),
+
+(
+    4,
+    1,
+    'new_obsession',
+    'Developed a habit of collecting old tool catalogues and repair manuals, admiring the language used to describe skilled labour.',
+    'seeded'
+),
+
+-- =====================================================
+-- Lydia Chen (poet_id = 5)
+-- =====================================================
+
+(
+    5,
+    1,
+    'life_event',
+    'Joined several new social groups following the end of a long relationship and is cautiously rebuilding a wider circle of friends.',
+    'seeded'
+),
+
+(
+    5,
+    1,
+    'life_event',
+    'Became a lead analyst on a major longitudinal health study expected to continue for several years.',
+    'seeded'
+),
+
+(
+    5,
+    1,
+    'life_event',
+    'Started attending a monthly puzzle and games evening, finding unexpected enjoyment in meeting people outside academic circles.',
+    'seeded'
+),
+
+(
+    5,
+    1,
+    'new_obsession',
+    'Became intrigued by the ways statistical models succeed and fail when predicting rare events, leading to broader reflections on uncertainty.',
+    'seeded'
+),
+
+(
+    5,
+    1,
+    'new_obsession',
+    'Started designing self-imposed writing constraints inspired by probability theory, combinatorics and information systems.',
+    'seeded'
+),
+
+-- =====================================================
+-- Aisha Mahmood (poet_id = 6)
+-- =====================================================
+
+(
+    6,
+    1,
+    'life_event',
+    'Completed her first term away from home and returned to Oxford with a stronger sense of independence but lingering uncertainty about identity and belonging.',
+    'seeded'
+),
+
+(
+    6,
+    1,
+    'life_event',
+    'Became involved in a student discussion group focused on ethics, technology and public policy.',
+    'seeded'
+),
+
+(
+    6,
+    1,
+    'life_event',
+    'Formed several close friendships at university that exposed her to unfamiliar political, philosophical and cultural perspectives.',
+    'seeded'
+),
+
+(
+    6,
+    1,
+    'new_obsession',
+    'Developed an intense interest in how emerging technologies influence personal identity, memory and ethical responsibility.',
+    'seeded'
+),
+
+(
+    6,
+    1,
+    'new_obsession',
+    'Started keeping a notebook of philosophical questions that arise from everyday conversations, lectures and online debates.',
+    'seeded'
+);
+
 
 
 -- ─────────────────────────────────────────────────
