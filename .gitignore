@@ -95,3 +95,6 @@ target/
 # Other
 *.mo
 *.pot
+
+# Data extracts
+z_misc/data/
